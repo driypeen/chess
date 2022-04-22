@@ -82,6 +82,21 @@ public final class Chess {
             }
         }
 
+        if (board.getCell(selected) instanceof King && board.isAvailableLongCastling(player)) {
+            switch (player) {
+                case WHITE_PLAYER -> possibleMoves.add(board.getWhiteKingLongCastling());
+                case BLACK_PLAYER -> possibleMoves.add(board.getBlackKingLongCastling());
+            }
+        }
+
+        if (board.getCell(selected) instanceof King && board.isAvailableShortCastling(player)) {
+            System.out.println("short");
+            switch (player) {
+                case WHITE_PLAYER -> possibleMoves.add(board.getWhiteKingShortCastling());
+                case BLACK_PLAYER -> possibleMoves.add(board.getBlackKingShortCastling());
+            }
+        }
+
         board.printBoard(selected,possibleMoves);
         String moveTo;
 

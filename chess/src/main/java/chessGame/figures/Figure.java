@@ -17,7 +17,7 @@ public abstract class Figure {
         this.isNotMoved = true;
     }
 
-    protected boolean isNotMoved() {
+    public boolean isNotMoved() {
         return isNotMoved;
     }
     public void move() {
